@@ -16,10 +16,10 @@ export default function Dropdown({ category }) {
     <div className="">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex w-full justify-center rounded-md  bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+          <Menu.Button className="inline-flex w-full justify-center rounded-xl bg-gradient-to-br from-[#ffffff]  px-5 py-2 text-md font-medium text-black hover:bg-[#92a4f7]">
             {category.name}
             <ChevronDownIcon
-              className="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
+              className="ml-2 -mr-1 h-7 w-5 text-md text-indigo-500 hover:text-violet-100"
               aria-hidden="true"
             />
           </Menu.Button>
@@ -42,8 +42,8 @@ export default function Dropdown({ category }) {
                       <Link
                         to={subCategory[1]}
                         className={`${
-                          active ? "bg-gray-400 text-white" : "text-gray-900"
-                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                          active ? "bg-[#eff6ff] text-black" : "text-gray-900"
+                        } group flex w-full items-center rounded-lg px-2 py-2 text-sm`}
                       >
                         {subCategory[0]}
                       </Link>

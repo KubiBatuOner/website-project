@@ -9,7 +9,7 @@ const ProductList = (props) => {
         ))}
       </div>
       {props.curPage <= props.maxPage && (
-        <div className="flex gap-2.5 justify-center items-center w-full mb-20">
+        <div className="flex gap-2.5 justify-center items-center w-full mb-20 text-[#F72585]">
           {props.curPage !== 1 && <Button onClick={props.onBack}>Back</Button>}
           {props.curPage !== props.maxPage && (
             <Button onClick={props.onNext}>Next</Button>
