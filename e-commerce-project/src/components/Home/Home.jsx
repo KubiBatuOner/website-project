@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div className="px-28 flex flex-col items-center pt-20">
+    <div className="sm:px-10 px-16 flex flex-col items-center pt-16">
       {isFetching && <Loading />}
       {productsList.length > 0 && !isFetching && (
         <ProductList
