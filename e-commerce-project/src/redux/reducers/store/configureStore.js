@@ -1,7 +1,10 @@
-import { legacy_createStore as createStore,applyMiddleware} from "redux"
-import rootReducer from "../index"
-import thunk from "redux-thunk"
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "../index";
+import thunk from "redux-thunk";
 
-export default function configureStore(){
-    return createStore(rootReducer, applyMiddleware(thunk))
+export default function configureAppStore() {
+    return configureStore({
+        reducer: rootReducer,
+        middleware: [thunk],
+    });
 }
