@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+
 import {
   faFacebook,
   faTwitter,
@@ -10,12 +10,15 @@ import {
   faCcMastercard,
   faCcPaypal,
 } from "@fortawesome/free-brands-svg-icons";
-
+import Logo from "../../logo.svg";
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-4">
       <div className="container mx-auto text-center md:flex md:justify-between">
-        <div className="mb-5 md:mb-0">
+        <div className="mb-5 md:mb-0 flex flex-col items-center">
+          <div className="w-12">
+            <img src={Logo} alt="logo" />
+          </div>
           <span className="text-xl font-bold">Futuristic Shop</span>
         </div>
         <div className="mb-5">

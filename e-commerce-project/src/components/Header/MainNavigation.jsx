@@ -1,6 +1,15 @@
+import { useParams } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import { useEffect, useState } from "react";
 
-const MainNavigation = () => {
+const MainNavigation = ({ isCategoriesShown, toggleCategories }) => {
+  const params = useParams();
+  const windowWidth = window.innerWidth;
+  useEffect(() => {
+    if (params.categoryName && windowWidth < 640) {
+      toggleCategories();
+    }
+  }, [params]);
   const Categories = [
     {
       id: 1,
@@ -45,10 +54,18 @@ const MainNavigation = () => {
       ],
     },
   ];
+  const showCategoriesClasses =
+    "list-none flex sm:justify-between sm:items-center gap-5 sm:flex-wrap  sm:flex-row flex-col items-center justify-center bg-white sm:static absolute z-20 sm:h-auto h-screen w-full sm:top-auto top-0";
+  const hideCategoriesClasses =
+    "list-none flex sm:justify-between sm:items-center gap-5 sm:flex-wrap sm:flex-row flex-col items-center justify-center bg-white sm:static absolute z-20 sm:h-auto h-screen w-full sm:top-auto  top-0 -translate-x-full sm:translate-x-0 transition-all";
 
   return (
-    <nav className="flex justify-center">
-      <ul className="list-none flex justify-between items-center gap-5 flex-wrap">
+    <nav className="flex justify-center ">
+      <ul
+        className={
+          isCategoriesShown ? showCategoriesClasses : hideCategoriesClasses
+        }
+      >
         {Categories.map((category, index) => (
           <li key={index}>
             <Dropdown category={category} />

@@ -1,3 +1,4 @@
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 
@@ -14,6 +15,9 @@ import Category from "./pages/Category";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import ProductSearch from "./pages/ProductSearch";
+import SignInLayout from "./components/auth/signIn/SignInLayout";
+import SignUpLayout from "./components/auth/signup/SignUpLayout";
+import ForgotPasswordLayout from "./components/auth/forgotPassword/ForgotPasswordLayout";
 
 // components
 import Footer from "./components/Footer/Footer";
@@ -41,7 +45,22 @@ const router = createBrowserRouter([
         path: "cart",
         element: <Cart />,
       },
-      { path: "search", element: <ProductSearch /> },
+      {
+        path: "search",
+        element: <ProductSearch />,
+      },
+      {
+        path: "signin",
+        element: <SignInLayout />,
+      },
+      {
+        path: "signup",
+        element: <SignUpLayout />,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPasswordLayout />,
+      },
     ],
   },
 ]);
@@ -50,10 +69,11 @@ const store = configureAppStore();
 
 function App() {
   return (
-    <Provider store={store}>
-      <RouterProvider router={router} />
-      <Footer />
-    </Provider>
+    <React.StrictMode>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </React.StrictMode>
   );
 }
 
