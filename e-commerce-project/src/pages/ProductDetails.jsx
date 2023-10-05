@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ProductDetailComp from "../components/Products/ProductDetailComp";
 import Loading from "../components/UI/Loading";
-import { fetchProductData } from "../store/single-product-slice";
+import { fetchProductData } from "../redux/slices/product/singleProductsSlice";
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { productId } = useParams();

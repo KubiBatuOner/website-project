@@ -5,7 +5,7 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-import { fetchAllProductData } from "../../store/all-products-slice";
+import { fetchAllProductData } from "../../redux/slices/product/allProductsSlice";
 import ProductCard from "./ProductCard";
 import Button from "../UI/Button";
 import Loading from "../UI/Loading";

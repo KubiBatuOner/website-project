@@ -6,13 +6,13 @@ import { Carousel } from "react-responsive-carousel";
 import { useDispatch } from "react-redux";
 
 import Button from "../UI/Button";
-import { cartActions } from "../../store/cart-slice";
+import { cartActions } from "../../redux/slices/cart/cartSlice";
 
 const ProductDetailComp = ({ product }) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
-    dispatch(cartActions.addItemToCart(product));
+    dispatch(cartActions.addToCart(product));
   };
   return (
     <div className="grid grid-cols-1fr lg:grid-cols-[3fr_2fr] mx-5 sm:mx-40 sm:mb-20 shadow-lg  bg-slate-300 rounded ">

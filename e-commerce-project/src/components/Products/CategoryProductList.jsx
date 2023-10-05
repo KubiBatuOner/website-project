@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Loading from "../UI/Loading";
-import { fetchCategoryProductData } from "../../store/category-products-slice";
+import { fetchCategoryProductData } from "../../redux/slices/categoryProductsSlice";
 import ProductCard from "./ProductCard";
 
 const CategoryProductList = ({ category }) => {

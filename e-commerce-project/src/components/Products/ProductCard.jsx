@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "../UI/Button";
-import { cartActions } from "../../store/cart-slice";
+import { cartActions as cartSlice } from "../../redux/slices/cart/cartSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
-    dispatch(cartActions.addItemToCart(product));
+    dispatch(cartSlice.addItemToCart(product));
   };
   return (
     <div

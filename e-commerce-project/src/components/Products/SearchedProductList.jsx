@@ -3,13 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "./ProductCard";
 import Loading from "../UI/Loading";
 import { useEffect } from "react";
-import { fetchSearchProductData } from "../../store/search-product-slice";
+import { fetchSearchProductData } from "../../redux/slices/product/searchProductsSlice";
 const SearchedProductList = () => {
   const dispatch = useDispatch();
   const searchParam = useSelector(
     (state) => state.searchedProducts.searchParam
   );
-  console.log(searchParam);
   useEffect(() => {
     dispatch(fetchSearchProductData(searchParam));
   }, [dispatch, searchParam]);
